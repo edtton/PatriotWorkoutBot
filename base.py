@@ -108,27 +108,77 @@ async def on_message(message):
 
     else:
       #completed features
-      embed = discord.Embed(title=":muscle: Welcome to the GMU Patriot Workout Bot! :feather:", description="Here are the commands you can use:", color=0x0c7c04)
-      embed.add_field(name=":green_circle: Workout Commands:", value="", inline=False)
-      embed.add_field(name="$workout",value="A random workout from any Mason Rec facility, using any machine.",inline=False)
-      embed.add_field(name="$rac or $rac ___", value="Random RAC workout. For a machine specific workout, include the machine after '$rac'.",inline=False)
-      embed.add_field(name="$afc or $afc ___", value="Random AFC workout. For a machine specific workout, include the machine after '$afc'",inline=False)
-      embed.add_field(name="$sky or $sky ___", value="Random Skyline workout. For a machine specific workout, include the machine after '$sky'", inline=False)
-      embed.add_field(name="$machine ___", value="Random workout on a specific machine. For machine commands, use '$help machines'. For example, '$machine erg' would only give erg workouts. For a list of machines at each facility, use '$list ___'.", inline=False)
-      embed.add_field(name="$bodyweight", value= "Random bodyweight workout.", inline=False)
-      embed.add_field(name="$cardio", value="Random cardio workout.", inline=False)
-      embed.add_field(name="$steadystate", value="Random steady state rowing workout.", inline=False)
+      embed = discord.Embed(
+        title=":muscle: Welcome to the GMU Patriot Workout Bot! :feather:",
+        description="Here are the commands you can use:",
+        color=0x0c7c04)
+      embed.add_field(name=":green_circle: Workout Commands:",
+                      value="",
+                      inline=False)
+      embed.add_field(
+        name="$workout",
+        value=
+        "A random workout from any Mason Rec facility, using any machine.",
+        inline=False)
+      embed.add_field(
+        name="$rac or $rac ___",
+        value=
+        "Random RAC workout. For a machine specific workout, include the machine after '$rac'.",
+        inline=False)
+      embed.add_field(
+        name="$afc or $afc ___",
+        value=
+        "Random AFC workout. For a machine specific workout, include the machine after '$afc'",
+        inline=False)
+      embed.add_field(
+        name="$sky or $sky ___",
+        value=
+        "Random Skyline workout. For a machine specific workout, include the machine after '$sky'",
+        inline=False)
+      embed.add_field(
+        name="$machine ___",
+        value=
+        "Random workout on a specific machine. For machine commands, use '$help machines'. For example, '$machine erg' would only give erg workouts. For a list of machines at each facility, use '$list ___'.",
+        inline=False)
+      embed.add_field(name="$bodyweight",
+                      value="Random bodyweight workout.",
+                      inline=False)
+      embed.add_field(name="$cardio",
+                      value="Random cardio workout.",
+                      inline=False)
+      embed.add_field(name="$steadystate",
+                      value="Random steady state rowing workout.",
+                      inline=False)
 
       #informational commands
-      embed.add_field(name=":green_circle: Informational Commands:", value="", inline=False)
-      embed.add_field(name="$nearest ___", value="Nearest facility to the requested building. For example, for the nearest facility to Innovation Hall, use '$nearest innovation'.", inline=False)
-      embed.add_field(name="$list ___", value="List of machines/equipment at the requested Rec facility, for example '$list RAC'.", inline=False)
-      embed.add_field(name="$help", value="Full list of the commands currently in use.", inline=False)
-      embed.add_field(name="$help nearest", value="Some notes about building abbreviations and using the '$nearest' command.", inline=False)
-      embed.add_field(name="$help machines", value="A full list of machines and equipment currently in our databank.", inline=False)
+      embed.add_field(name=":green_circle: Informational Commands:",
+                      value="",
+                      inline=False)
+      embed.add_field(
+        name="$nearest ___",
+        value=
+        "Nearest facility to the requested building. For example, for the nearest facility to Innovation Hall, use '$nearest innovation'.",
+        inline=False)
+      embed.add_field(
+        name="$list ___",
+        value=
+        "List of machines/equipment at the requested Rec facility, for example '$list RAC'.",
+        inline=False)
+      embed.add_field(name="$help",
+                      value="Full list of the commands currently in use.",
+                      inline=False)
+      embed.add_field(
+        name="$help nearest",
+        value=
+        "Some notes about building abbreviations and using the '$nearest' command.",
+        inline=False)
+      embed.add_field(
+        name="$help machines",
+        value=
+        "A full list of machines and equipment currently in our databank.",
+        inline=False)
 
       #planned features
-      # embed.add_field(name="\n----------------PLANNED FEATURES, COMING SOON!----------------", value="", inline=False)
       # embed.add_field(name="$all", value="Wanna just see 'em all? This will give you a list of all our banked workouts.", inline=False)
       # embed.add_field(name="$list ___", value="This will give you list of machines and equipment at the requested Rec facility, for example '$list rac'.", inline=False)
       # embed.add_field(name="$freeweight", value="This will give you a random workout using free weights, rather than a machine.", inline=False)
@@ -142,7 +192,10 @@ async def on_message(message):
       # embed.add_field(name="$time ___", value="This will give you a random workout within a request time length estimate. Simply enter in the desired length in minutes, and you will receive a workout that is either in that interval or can be easily modified to fit that interval. For example, if I wanted a max length of 10 minutes, I would type '$time 10'.", inline=False)
       # embed.add_field(name="$list ___", value="This will give you a list of all machines/equipment at the requested facility. For example, if I wanted the equipment list at the AFC, I would type '$list afc'.", inline=False
 
-      embed.set_footer(text="NOTE: This bot is intended to supplement your existing routine and is not intended to be a replacement. Do your research and consult a coach/advisor to see what's best for you.")
+      embed.set_footer(
+        text=
+        "NOTE: This bot is intended to supplement your existing routine and is not intended to be a replacement. Do your research and consult a coach/advisor to see what's best for you."
+      )
       await message.channel.send(embed=embed)
 
   #$workout will give a random workout from bank of ALL workouts, regardless of equipment, or gym.
@@ -308,7 +361,7 @@ async def on_message(message):
         embed = discord.Embed(title="", description="", color=0x0c7c04)
         embed.add_field(
           name=
-          ":gear: This machine is currently not in our databank. Please try again.",
+          ":gear: This machine is currently not in our databank. Please use '$help machines' for a list of working commands.",
           value="",
           inline=True)
         await message.channel.send(embed=embed)
@@ -414,7 +467,7 @@ async def on_message(message):
         embed = discord.Embed(title="", description="", color=0x0c7c04)
         embed.add_field(
           name=
-          ":gear: This machine is currently not in our databank. Please try again.",
+          ":gear: This machine is currently not in our databank. Please use '$help machines' for a list of working commands.",
           value="",
           inline=True)
         await message.channel.send(embed=embed)
@@ -448,7 +501,8 @@ async def on_message(message):
       await message.channel.send(embed=embed)
 
   #Skyline workout command
-  if message.content.lower().startswith("$sky") or message.content.lower().startswith("$skyline"):
+  if message.content.lower().startswith(
+      "$sky") or message.content.lower().startswith("$skyline"):
     #Skyline machine specific workout
     command = message.content.split()[1:]
     if len(command) == 1:
@@ -513,13 +567,12 @@ async def on_message(message):
           embed.set_footer(text=randomString)
 
           await message.channel.send(embed=embed)
-
       #user enters in target machine that is not in workout databank
       else:
         embed = discord.Embed(title="", description="", color=0x0c7c04)
         embed.add_field(
           name=
-          ":gear: This machine is currently not in our databank. Please try again.",
+          ":gear: This machine is currently not in our databank. Please use '$help machines' for a list of working commands.",
           value="",
           inline=True)
         await message.channel.send(embed=embed)
@@ -687,7 +740,7 @@ async def on_message(message):
         embed = discord.Embed(title="", description="", color=0x0c7c04)
         embed.add_field(
           name=
-          ":gear: This machine is currently not in our databank. Please try again.",
+          ":gear: This machine is currently not in our databank. Please use '$help machines' for a list of working commands.",
           value="",
           inline=True)
         await message.channel.send(embed=embed)
@@ -697,7 +750,7 @@ async def on_message(message):
       embed = discord.Embed(title="", description="", color=0x0c7c04)
       embed.add_field(
         name=
-        ":gear: There must be a machine target after the command, such as '$machine erg'. Please try again.",
+        ":gear: There must be a machine target after the command, such as '$machine erg'. Please use '$help machines' for a list of working commands.",
         value="",
         inline=True)
       await message.channel.send(embed=embed)
@@ -706,33 +759,43 @@ async def on_message(message):
   if message.content.lower().startswith("$list"):
     command = message.content.split()[1:]
 
-    if len(command) < 1: 
+    if len(command) < 1:
       embed = discord.Embed(title="", description="", color=0x0c7c04)
-      embed.add_field(name=":gear: There must be a location target after the command, such as '$list rac'. Please try again.", value="", inline=True)
+      embed.add_field(
+        name=
+        ":gear: There must be a location target after the command, such as '$list rac'. Please try again.",
+        value="",
+        inline=True)
       await message.channel.send(embed=embed)
 
     if command[0].lower() == "rac":
       embed = discord.Embed(
         title=":gear: Machines and Equipment at the RAC :round_pushpin: ",
-        description="This is a list of machines/equipment at the RAC. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
+        description=
+        "This is a list of machines/equipment at the RAC. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
         color=0x0c7c04)
       embed.set_thumbnail(
-        url="https://recreation.gmu.edu/wp-content/uploads/2012/10/Rac-photo.jpg")
+        url=
+        "https://recreation.gmu.edu/wp-content/uploads/2012/10/Rac-photo.jpg")
       embed.add_field(name=":gear: Machines and Equipment:",
                       value="",
                       inline=False)
 
       for machine in machines.RAC_machines:
-        embed.add_field(name=machine, value="", inline=False)
+        embed.add_field(name="", value=machine, inline=False)
 
-      embed.set_footer(text="Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation")
+      embed.set_footer(
+        text=
+        "Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation"
+      )
 
       await message.channel.send(embed=embed)
 
     elif command[0].lower() == "afc":
       embed = discord.Embed(
         title=":gear: Machines and Equipment at the AFC :round_pushpin: ",
-        description="This is a list of machines/equipment at the AFC. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
+        description=
+        "This is a list of machines/equipment at the AFC. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
         color=0x0c7c04)
       embed.set_thumbnail(
         url="https://recreation.gmu.edu/wp-content/uploads/2012/10/afc.jpg")
@@ -741,27 +804,36 @@ async def on_message(message):
                       inline=False)
 
       for machine in machines.AFC_machines:
-        embed.add_field(name=machine, value="", inline=False)
+        embed.add_field(name="", value=machine, inline=False)
 
-      embed.set_footer(text="Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation")
+      embed.set_footer(
+        text=
+        "Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation"
+      )
 
       await message.channel.send(embed=embed)
 
     elif command[0].lower() == "sky" or command[0].lower() == "skyline":
       embed = discord.Embed(
         title=":gear: Machines and Equipment at Skyline :round_pushpin: ",
-        description="This is a list of machines/equipment at Skyline. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
+        description=
+        "This is a list of machines/equipment at Skyline. For a workout on a specific machine, use the machine commands listed in the command '$help machines': ",
         color=0x0c7c04)
       embed.set_thumbnail(
-        url="https://i.pinimg.com/originals/fa/94/16/fa94169a9c6807cc6ca17c9f2b9f0965.jpg")
+        url=
+        "https://i.pinimg.com/originals/fa/94/16/fa94169a9c6807cc6ca17c9f2b9f0965.jpg"
+      )
       embed.add_field(name=":gear: Machines and Equipment:",
                       value="",
                       inline=False)
 
       for machine in machines.SKY_machines:
-        embed.add_field(name=machine, value="", inline=False)
+        embed.add_field(name="", value=machine, inline=False)
 
-      embed.set_footer(text="Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation")
+      embed.set_footer(
+        text=
+        "Big thanks to Becky Demus and the Mason Recreation staff for their help with this project! #PatriotNation"
+      )
 
       await message.channel.send(embed=embed)
 
